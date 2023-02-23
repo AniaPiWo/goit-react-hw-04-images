@@ -1,0 +1,12 @@
+.ImageGalleryItemImage {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 250ms;
+  border-radius: 5px;
+}
+
+.ImageGalleryItemImage:hover {
+  transform: scale(1.02);
+}

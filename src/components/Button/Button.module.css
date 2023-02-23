@@ -1,0 +1,14 @@
+.Button {
+  padding: 8px 16px;
+  border-radius: 5px;
+  background-color: hotpink;
+  display: inline-block;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  width: 160px;
+  margin: auto;
+}
