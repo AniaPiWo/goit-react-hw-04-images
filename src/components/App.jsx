@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Searchbar } from './Searchbar/Searchbar';
 import { fetchImages } from './api/fetchImages';
 import { ImageGallery } from './ImageGallery/ImageGallery';
@@ -47,18 +47,21 @@ export function App() {
     setModalAlt('');
   };
 
-  const handleKeyDown = event => {
-    if (event.code === 'Escape') {
-      handleModalClose();
-    }
-  };
+  const handleKeyDown = useCallback(
+    event => {
+      if (event.code === 'Escape') {
+        handleModalClose();
+      }
+    },
+    [handleModalClose]
+  );
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [handleKeyDown]);
 
   return (
     <div
