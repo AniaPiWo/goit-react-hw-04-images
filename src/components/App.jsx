@@ -41,11 +41,11 @@ export function App() {
     setModalImg(e.target.name);
   };
 
-  const handleModalClose = () => {
+  const handleModalClose = useCallback(() => {
     setModalOpen(false);
     setModalImg('');
     setModalAlt('');
-  };
+  }, []);
 
   const handleKeyDown = useCallback(
     event => {
